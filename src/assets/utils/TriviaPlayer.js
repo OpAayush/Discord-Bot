@@ -107,7 +107,7 @@ class TriviaPlayer {
                 let skipCounter = 0;
                 const skippedArray = [];
 
-                const collector = this.textChannel.createMessageCollector({
+                const collector = this.textChannel./*channel.*/createMessageCollector({
                     time: 30000
                 });
 

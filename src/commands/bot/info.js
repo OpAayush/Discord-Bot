@@ -3,18 +3,18 @@ const moment = require("moment");
 require("moment-duration-format");
 
 module.exports = async (client, interaction, args) => {
-    const promises = [
+  /*  const promises = [
         client.shard.broadcastEval(client => client.guilds.cache.size),
         client.shard.broadcastEval(client => client.guilds.cache.reduce((acc, guild) => acc + guild.memberCount, 0)),
         client.shard.broadcastEval(client => client.channels.cache.size),
         client.shard.broadcastEval(client => client.voice.adapters.size)
     ];
     return Promise.all(promises)
-        .then(async results => {
-            const totalGuilds = results[0].reduce((acc, guildCount) => acc + guildCount, 0);
-            const totalMembers = results[1].reduce((acc, memberCount) => acc + memberCount, 0);
-            const totalChannels = results[2].reduce((acc, channelCount) => acc + channelCount, 0);
-            const totalVoice = results[3].reduce((acc, voiceCount) => acc + voiceCount, 0);
+        .then(async  => { */
+            const totalGuilds = client.guilds.cache.size
+            const totalMembers = client.users.cache.size
+            const totalChannels = client.channels.cache.size
+            const totalVoice = client.voice.adapters.size
 
             const duration = moment.duration(client.uptime).format("\`D\` [days], \`H\` [hrs], \`m\` [mins], \`s\` [secs]");
 
@@ -126,7 +126,7 @@ module.exports = async (client, interaction, args) => {
                 },
                 {
                     name: "💾┆Bot memory",
-                    value: `\`${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}\` MB`,
+                    value: `\`${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}\` MB / 8,192 MB`,
                     inline: true,
                 },
                 {
@@ -136,7 +136,7 @@ module.exports = async (client, interaction, args) => {
                 }],
                 type: 'editreply'
             }, interaction)
-        })
+       // })
 }
 
  

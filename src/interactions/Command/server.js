@@ -4,12 +4,17 @@ const Discord = require('discord.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('guild')
+        .setName('server')
         .setDescription('Manage the guild')
         .addSubcommand(subcommand =>
             subcommand
                 .setName('help')
                 .setDescription('Get information about the guild category commands')
+        )
+      .addSubcommand(subcommand =>
+            subcommand
+                .setName('icon')
+                .setDescription('Get Server Icon')
         )
         .addSubcommand(subcommand =>
             subcommand

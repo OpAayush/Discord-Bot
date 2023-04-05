@@ -45,13 +45,13 @@ module.exports = async (client, guild) => {
 
     if (guild.name == undefined) return;
 
-    const promises = [
+  /*  const promises = [
         client.shard.broadcastEval(client => client.guilds.cache.size),
         client.shard.broadcastEval(client => client.guilds.cache.reduce((acc, guild) => acc + guild.memberCount, 0)),
     ];
     Promise.all(promises)
-        .then(async (results) => {
-            const totalGuilds = results[0].reduce((acc, guildCount) => acc + guildCount, 0);
+        .then(async (results) => { */
+            const totalGuilds = client.guilds.cache.size
 
             const embed = new discord.EmbedBuilder()
                 .setTitle("🔴・Removed from a server!")
@@ -69,7 +69,7 @@ module.exports = async (client, guild) => {
                 avatarURL: client.user.avatarURL(),
                 embeds: [embed],
             });
-        })
+       // })
 
             var remove = await Schema.deleteMany({ Guild: guild.id });
             var remove = await Schema3.deleteMany({ Guild: guild.id });

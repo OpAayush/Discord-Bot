@@ -12,7 +12,7 @@ module.exports = async (client, interaction, args) => {
             const button = new Discord.ButtonBuilder()
                 .setCustomId('Bot_openticket')
                 .setLabel(name)
-                .setStyle(Discord.ButtonStyle.Primary)
+                .setStyle(Discord.ButtonStyle.Secondary)
                 .setEmoji('🎫')
 
             const row = new Discord.ActionRowBuilder()
@@ -37,5 +37,3 @@ module.exports = async (client, interaction, args) => {
         }
     })
 }
-
- 

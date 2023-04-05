@@ -10,7 +10,6 @@ module.exports = async (client, interaction, args) => {
     const image = await Canvas.colorfy(userAvatar, "#ff0000")
     let attach = new Discord.AttachmentBuilder(image, { name: "colorify.png" });
 
-    const embed = client.templateEmbed().setImage("attachment://colorify.png");
-    interaction.editReply({ files: [attach], embeds: [embed] });
+    interaction.editReply({ files: [attach] })
 }
 

@@ -26,8 +26,8 @@ module.exports = async (client, interaction, args) => {
         var sendComponents = await client.buttonReactions("id", reactions)
 
         client.embed({
-            title: `${upper}・Roles`,
-            desc: `_____ \n\nChoose your roles by pressing the button! \n\n${mapped}`,
+            title: `${upper}`,
+            desc: `\nChoose your **roles** by pressing the button! \n\n${mapped}`,
             components: sendComponents
         }, channel).then((msg) => {
             data.Message = msg.id;

@@ -19,7 +19,7 @@ module.exports = async (client, interaction, args) => {
 
     if(role == interaction.guild.roles.everyone) return client.errNormal({ error: "You cannot add the everyone role to the store!", type: 'editreply' }, interaction);
 
-    store.findOne({ Guild: interaction.guild.id, Role: role.id }, async (err, storeData) => {
+    store.findOne({ Role: role.id }, async (err, storeData) => {
         if (storeData) {
             client.errNormal({ error: `This role is already in the store!`, type: 'editreply' }, interaction);
         }

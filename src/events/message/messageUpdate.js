@@ -41,10 +41,6 @@ let row = new Discord.ActionRowBuilder()
                 {
                     name: `> New message`,
                     value: `\`\`\`${newMessage.content.replace(/`/g, "'")}\`\`\``
-                },
-                {
-                    name: `> Timestamp`,
-                    value: `- <t:${Math.floor(newMessage.createdTimestamp / 1000)}:R>`
                 }
             ],
             components: [row]

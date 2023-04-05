@@ -44,27 +44,43 @@ module.exports = async (client, interaction, args) => {
                                 new Discord.ButtonBuilder()
                                     .setCustomId('Bot_closeticket')
                                     .setEmoji('🔒')
-                                    .setStyle(Discord.ButtonStyle.Primary),
+.setLabel('Close')
+                                    .setStyle(Discord.ButtonStyle.Danger),
 
                                 new Discord.ButtonBuilder()
                                     .setCustomId('Bot_claimTicket')
                                     .setEmoji('✋')
+.setLabel('Claim')
                                     .setStyle(Discord.ButtonStyle.Primary),
 
                                 new Discord.ButtonBuilder()
                                     .setCustomId('Bot_transcriptTicket')
                                     .setEmoji('📝')
+.setLabel('Transcript')
+
                                     .setStyle(Discord.ButtonStyle.Primary),
 
                                 new Discord.ButtonBuilder()
                                     .setCustomId('Bot_noticeTicket')
                                     .setEmoji('🔔')
+.setLabel('Notice')
                                     .setStyle(Discord.ButtonStyle.Primary),
                             );
 
+
+let timcket = new Discord.ActionRowBuilder()
+                .addComponents(
+                    new Discord.ButtonBuilder()
+                        .setEmoji("🏓")
+                        .setLabel("Check your Pings!")
+.setDisabled(true)
+                        .setStyle(Discord.ButtonStyle.Secondary),
+                  );
+                      
                         client.embed({
                             title: `${client.emotes.animated.loading}・Progress`,
-                            desc: `Your ticket is being created...`,
+                            desc: `Your ticket has been created \n**SEE YOUR PINGS!*""`,
+                          
                             type: 'ephemeral'
                         }, interaction).then((msg) => {
 

@@ -32,10 +32,6 @@ module.exports = async (client, messageDeleted) => {
                 {
                     name: `> Message`,
                     value: `\`\`\`${content.replace(/`/g, "'")}\`\`\``
-                },
-                {
-                    name: `> Timestamp`,
-                    value: `- <t:${Math.floor(messageDeleted.createdTimestamp / 1000)}:R>`
                 }
             ]
         }, logsChannel).catch(() => { })

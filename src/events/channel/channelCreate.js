@@ -1,4 +1,4 @@
-const discord = require('discord.js');
+const { ActionRowBuilder, ButtonBuilder, Discord, discord } = require('discord.js');
 
 module.exports = async (client, channel) => {
     let types = {
@@ -16,6 +16,15 @@ module.exports = async (client, channel) => {
     const logsChannel = await client.getLogs(channel.guild.id);
     if (!logsChannel) return;
 
+/* let row = new Discord.ActionRowBuilder()
+                .addComponents(
+                    new Discord.ButtonBuilder()
+                        .setEmoji("🔗")
+                        .setLabel("Go to Channel")
+                  .setURL(`https://discordapp.com/channels/${channel.guild.id}/${channel.id}`)
+                        .setStyle(discord.ButtonStyle.Link),
+                  ); */
+  
     console.log(channel.type)
     client.embed({
         title: `🔧・Channel created`,
@@ -41,6 +50,8 @@ module.exports = async (client, channel) => {
                 name: `> Type`,
                 value: `- ${types[channel.type]}`
             }
-        ]
+          
+        ],
+    //  components: [row]
     }, logsChannel).catch(() => { })
 };

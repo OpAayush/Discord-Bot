@@ -13,3 +13,6 @@ module.exports = async (client, interaction, args) => {
     const embed = client.templateEmbed().setImage("attachment://ad.png");
     interaction.editReply({ files: [attach], embeds: [embed] });
 }
+
+
+

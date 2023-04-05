@@ -9,7 +9,7 @@ const StarBoard = require("../../database/models/starboardChannels");
 module.exports = async (client, interaction, args) => {
     const choice = interaction.options.getString('setup');
     const channel = interaction.options.getChannel('channel');
-    
+
     const choices = {
         birthdays : Birthdays,
         chatbot : Chatbot,

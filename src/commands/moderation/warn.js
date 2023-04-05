@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 
 const Schema = require("../../database/models/warnings");
 const Case = require("../../database/models/warnCase");
+
 module.exports = async (client, interaction, args) => {
     const perms = await client.checkUserPerms({
         flags: [Discord.PermissionsBitField.Flags.ManageMessages],
@@ -83,7 +84,7 @@ module.exports = async (client, interaction, args) => {
                 name: "👤┆User",
                 value: `${member}`,
                 inline: true
-            },
+               },
             {
                 name: "👤┆Moderator",
                 value: `${interaction.user}`,

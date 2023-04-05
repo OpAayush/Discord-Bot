@@ -21,7 +21,7 @@ module.exports = {
             .addComponents(
                 new Discord.StringSelectMenuBuilder()
                     .setCustomId('Bot-helppanel')
-                    .setPlaceholder('❌┆Nothing selected')
+                    .setPlaceholder('Nothing selected')
                     .addOptions([
                         {
                             label: `Commands`,
@@ -65,7 +65,7 @@ module.exports = {
                 },
                 {
                     name: `🔗┆Links`,
-                    value: `[Website](https://corwindev.nl/) | [Invite](${client.config.discord.botInvite}) | [Vote](https://top.gg/bot/798144456528363550/vote)`
+                    value: `[Website](https://spicydevs.me) | [Invite](${client.config.discord.botInvite}) | [BOT SRC CODE](https://replit.com/@SpicyDevs/SpicyDevs)`
                 },
             ],
             components: [row],

@@ -18,10 +18,9 @@ module.exports = async (client, interaction, args) => {
 
     const member = interaction.options.getUser('user');
 
-
     Schema.findOne({ Guild: interaction.guild.id, User: member.id }, async (err, data) => {
         if (data) {
-            var fields = [];
+var fields = [];
             data.Warnings.forEach(element => {
                 fields.push({
                     name: "Warning **" + element.Case + "**",
@@ -36,8 +35,9 @@ module.exports = async (client, interaction, args) => {
                     {
                         name: "Total",
                         value: `${data.Warnings.length}`,
-                    },
-                    ...fields
+                    
+                    
+                    }
                 ],
                 type: 'editreply'
             }, interaction)
@@ -52,3 +52,4 @@ module.exports = async (client, interaction, args) => {
     })
 }
 
+ 

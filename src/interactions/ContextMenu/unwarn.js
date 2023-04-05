@@ -95,9 +95,13 @@ module.exports = {
             } else {
                 client.errNormal({
                     error: "User has no warnings!",
-                    type: 'ephemeraledit'
+                    type: 'editreply'
                 }, interaction);
             }
         })
+
+        
     },
 };
+
+ 

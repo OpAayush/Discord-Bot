@@ -30,6 +30,14 @@ module.exports = async (client, reaction, user) => {
       m.embeds[0].footer &&
       m.embeds[0].footer.text.endsWith(reaction.message.id)
     );
+    let row = new Discord.ActionRowBuilder()
+                .addComponents(
+                    new Discord.ButtonBuilder()
+                        .setEmoji("🔗")
+                        .setLabel("Jump to the Message")
+                        .setURL(`${reaction.message.url}`)
+                        .setStyle(Discord.ButtonStyle.Link),
+                  );
 
     if (stars) {
       const foundStar = stars.embeds[0];
@@ -45,11 +53,11 @@ module.exports = async (client, reaction, user) => {
             value: `${reaction.count}`,
             inline: true
           },
-          {
+         /* {
             name: `🗨️┇Message`,
             value: `[Jump to the message](${reaction.message.url})`,
             inline: true
-          },
+          }, */
           {
             name: `👤┇Author`,
             value: `${reaction.message.author} (${reaction.message.author.tag})`,
@@ -57,6 +65,7 @@ module.exports = async (client, reaction, user) => {
           }
         ],
         footer: `${client.config.discord.footer} | ${reaction.message.id}`,
+        components: [row],
         type: 'edit'
       }, starMsg)
     }
@@ -77,17 +86,19 @@ module.exports = async (client, reaction, user) => {
             value: `${reaction.count}`,
             inline: true
           },
-          {
+        /*  {
             name: `🗨️┇Message`,
             value: `[Jump to the message](${reaction.message.url})`,
             inline: true
-          },
+          }, */
           {
             name: `👤┇Author`,
             value: `${reaction.message.author} (${reaction.message.author.tag})`,
             inline: true
           }
         ],
+        components: [row],
+
         footer: `${client.config.discord.footer} | ${reaction.message.id}`
       }, starboardChannel)
     }

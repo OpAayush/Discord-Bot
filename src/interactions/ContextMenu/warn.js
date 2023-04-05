@@ -15,12 +15,13 @@ module.exports = {
      * @param {CommandInteraction} interaction
      * @param {String[]} args
      */
+
     run: async (client, interaction, args) => {
         const perms = await client.checkPerms({
             flags: [Discord.PermissionsBitField.Flags.ManageMessages],
             perms: [Discord.PermissionsBitField.Flags.ManageMessages]
         }, interaction)
-        if (perms === false) {
+      if (perms === false) {
             client.errNormal({
                 error: `You don't have the required permissions to use this command!`,
                 type: 'ephemeral'
@@ -51,9 +52,10 @@ module.exports = {
         if (!submitted) {
             return;
         }
+      
 
         const member = interaction.guild.members.cache.get(interaction.targetId);
-        var caseNumber; 
+      var caseNumber; 
         await Case.findOne({ Guild: interaction.guild.id }).then(async data => {
             if(!data) {
                 new Case({
@@ -110,7 +112,7 @@ module.exports = {
             ]
         }, member).catch(() => { })
 
-        client.emit('warnAdd', member, interaction.user, submitted.fields.getTextInputValue("reason"));
+            client.emit('warnAdd', member, interaction.user, submitted.fields.getTextInputValue("reason"));
         client.succNormal({
             text: `User has received a warning!`,
             fields: [
@@ -118,7 +120,7 @@ module.exports = {
                     name: "👤┆User",
                     value: `${member}`,
                     inline: true
-                },
+                  },
                 {
                     name: "👤┆Moderator",
                     value: `${interaction.user}`,
@@ -135,3 +137,4 @@ module.exports = {
     },
 };
 
+ 

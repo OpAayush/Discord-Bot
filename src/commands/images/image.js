@@ -14,6 +14,7 @@ module.exports = async (client, interaction, args) => {
     client.simpleEmbed({
         image: `${image}`
     }, channel)
+
 }
 
  

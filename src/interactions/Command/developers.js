@@ -74,6 +74,14 @@ module.exports = {
                 .setName('servers')
                 .setDescription('See all servers from this shard')
         )
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('addmoney')
+                .setDescription('Add money to a user')
+                .addUserOption(option => option.setName('user').setDescription('Select a user').setRequired(true))
+                .addNumberOption(option => option.setName('amount').setDescription('Enter a amount').setRequired(true))
+                       
+        )
     ,
 
     /** 

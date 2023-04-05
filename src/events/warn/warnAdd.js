@@ -36,7 +36,7 @@ module.exports = async (client, user, mod, reason) => {
                 value: `${reason}`
             }
         ]
-    }, logsChannel).catch(() => {
+     }, logsChannel).catch(() => {
         console.log
      })
 };

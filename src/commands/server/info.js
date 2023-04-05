@@ -5,8 +5,8 @@ module.exports = async (client, interaction, args) => {
     "0": "None",
     "1": "Low",
     "2": "Medium",
-    "3": "(╯°□°）╯︵  ┻━┻",
-    "4": "┻━┻ミヽ(ಠ益ಠ)ノ彡┻━┻"
+    "3": "**High**",
+    "4": "**HIGHEST**"
   }
 
   let region = {
@@ -28,10 +28,11 @@ module.exports = async (client, interaction, args) => {
   }
 
   let tier = {
-     "0": "None",
+    "0": "None",
     "1": "TIER 1",
     "2": "TIER 2",
     "3": "**TIER 3**"
+
   }
 
   const members = await interaction.guild.members.fetch();

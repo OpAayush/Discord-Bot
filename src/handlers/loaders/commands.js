@@ -12,13 +12,13 @@ module.exports = (client) => {
 
     const commands = [];
 
-    if (client.shard.ids[0] === 0) console.log(chalk.blue(chalk.bold(`System`)), (chalk.white(`>>`)), (chalk.green(`Loading commands`)), (chalk.white(`...`)))
-    if (client.shard.ids[0] === 0) console.log(`\u001b[0m`);
+    console.log(chalk.blue(chalk.bold(`System`)), (chalk.white(`>>`)), (chalk.green(`Loading commands`)), (chalk.white(`...`)))
+   console.log(`\u001b[0m`);
 
     fs.readdirSync('./src/interactions').forEach(dirs => {
         const commandFiles = fs.readdirSync(`./src/interactions/${dirs}`).filter(files => files.endsWith('.js'));
 
-        if (client.shard.ids[0] === 0) console.log(chalk.blue(chalk.bold(`System`)), (chalk.white(`>>`)), chalk.red(`${commandFiles.length}`), (chalk.green(`commands of`)), chalk.red(`${dirs}`), (chalk.green(`loaded`)));
+        console.log(chalk.blue(chalk.bold(`System`)), (chalk.white(`>>`)), chalk.red(`${commandFiles.length}`), (chalk.green(`commands of`)), chalk.red(`${dirs}`), (chalk.green(`loaded`)));
 
         for (const file of commandFiles) {
             const command = require(`${process.cwd()}/src/interactions/${dirs}/${file}`);
@@ -32,7 +32,7 @@ module.exports = (client) => {
     (async () => {
         try {
             const embed = new Discord.EmbedBuilder()
-                .setDescription(`Started refreshing application (/) commands.`)
+                .setDescription(`<a:refresh:1059043283646554142> | Started Refreshing <:slash:1058314875207688192> Commands.`)
                 .setColor(client.config.colors.normal)
             interactionLogs.send({
                 username: 'Bot Logs',
@@ -45,7 +45,7 @@ module.exports = (client) => {
             )
 
             const embedFinal = new Discord.EmbedBuilder()
-                .setDescription(`Successfully reloaded ${commands.length} application (/) commands.`)
+                .setDescription(`<a:done:1059043963941683260> | Successfully Reloaded **${commands.length}** <:slash:1058314875207688192> Commands.`)
                 .setColor(client.config.colors.normal)
             interactionLogs.send({
                 username: 'Bot Logs',

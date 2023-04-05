@@ -11,21 +11,22 @@ module.exports = {
                 .setName('help')
                 .setDescription('Get information about the economy category commands')
         )
-        .addSubcommand(subcommand =>
+       /*  .addSubcommand(subcommand =>
             subcommand
                 .setName('additem')
                 .setDescription('Add a role item to the economy store')
                 .addRoleOption(option => option.setName('role').setDescription('Select a role').setRequired(true))
                 .addNumberOption(option => option.setName('amount').setDescription('Enter a amount').setRequired(true))
 
-        )
+        ) 
         .addSubcommand(subcommand =>
             subcommand
                 .setName('addmoney')
                 .setDescription('Add money to a user')
                 .addUserOption(option => option.setName('user').setDescription('Select a user').setRequired(true))
                 .addNumberOption(option => option.setName('amount').setDescription('Enter a amount').setRequired(true))
-        )
+                       
+        ) */
         .addSubcommand(subcommand =>
             subcommand
                 .setName('balance')

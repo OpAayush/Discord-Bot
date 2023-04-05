@@ -136,7 +136,7 @@ module.exports = async (client, interaction, args) => {
 
                         }
                     })
-                    .catch(async () => {
+              .catch(async () => {
                         index = result + 1;
 
                         Schema.findOne({ Guild: interaction.guild.id, User: user.id },

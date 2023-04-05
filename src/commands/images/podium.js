@@ -12,7 +12,6 @@ module.exports = async (client, interaction, args) => {
 
     var img = await new DIG.Podium().getImage(user1Avatar, user2Avatar, user3Avatar, user1.tag, user2.tag, user3.tag);
     var attach = new Discord.AttachmentBuilder(img, { name: "podium.png" });
-    const embed = client.templateEmbed().setImage("attachment://podium.png");
-    interaction.editReply({ files: [attach], embeds: [embed] });
+    interaction.editReply({ files: [attach] })
 }
 

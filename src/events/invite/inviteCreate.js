@@ -15,10 +15,6 @@ module.exports = async (client, invite) => {
             {
                 name: `> Inviter`,
                 value: `- ${invite.inviter} (${invite.inviter.tag})`
-            },
-            {
-                name: `> Timestamp`,
-                value: `- <t:${Math.floor(invite.createdTimestamp / 1000)}:R>`
             }
         ]
     }, logsChannel).catch(() => { })

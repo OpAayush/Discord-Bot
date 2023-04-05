@@ -16,13 +16,13 @@ module.exports = async (client, guild) => {
     }).save();
 
     try {
-        const promises = [
-            client.shard.broadcastEval(client => client.guilds.cache.size),
-            client.shard.broadcastEval(client => client.guilds.cache.reduce((acc, guild) => acc + guild.memberCount, 0)),
+       /* const promises = [
+            client.broadcastEval(client => client.guilds.cache.size),
+            client.broadcastEval(client => client.guilds.cache.reduce((acc, guild) => acc + guild.memberCount, 0)),
         ];
         Promise.all(promises)
-            .then(async (results) => {
-                const totalGuilds = results[0].reduce((acc, guildCount) => acc + guildCount, 0);
+            .then(async (results) => { */
+                const totalGuilds = client.guilds.cache.size
                 const embed = new Discord.EmbedBuilder()
                     .setTitle("🟢・Added to a new server!")
                     .addFields(
@@ -39,7 +39,7 @@ module.exports = async (client, guild) => {
                     avatarURL: client.user.avatarURL(),
                     embeds: [embed],
                 });
-            })
+          //  })
 
         let defaultChannel = "";
         guild.channels.cache.forEach((channel) => {
@@ -73,7 +73,7 @@ module.exports = async (client, guild) => {
             },
             {
                 name: "☎️┆I need help what now?",
-                value: `You can DM <@755297485328482356> for support or joining the [[Support server]](${client.config.discord.serverInvite})`,
+                value: `You can DM <@526015297887404042> for support or joining the [[Support server]](${client.config.discord.serverInvite})`,
                 inline: false,
             },
             {

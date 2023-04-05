@@ -16,7 +16,7 @@ module.exports = async (client) => {
     })
 
     client.once(Discord.Events.ClientReady, async () => {
-        setTimeout(() => {
+      setTimeout(() => {
             try {
                 client.guilds.cache.forEach(async (guild) => {
                     if (!guild || !guild.invites) return;

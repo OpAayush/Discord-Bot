@@ -16,8 +16,9 @@ module.exports = async (client, interaction, args) => {
         .addComponents(button)
 
     client.embed({
-        title: `🔗・${text}`,
-        desc: `Click the button to open the link!`,
+        title: `Minecraft Pocket Edition 1.19.60`,
+        desc: `Click the button to Download!`,
+        image: `https://cdn.discordapp.com/attachments/1058674319573651486/1072772895710908436/maxresdefault.jpg`,
         components: [row],
         type: 'editreply'
     }, interaction)

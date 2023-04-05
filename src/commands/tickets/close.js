@@ -112,19 +112,26 @@ module.exports = async (client, interaction, args) => {
 
                 const row = new Discord.ActionRowBuilder()
                     .addComponents(
+                      new Discord.ButtonBuilder()
+                            .setCustomId('Bot_openTicket')
+                            .setEmoji('🔓')
+.setLabel('Open')
+                            .setStyle(Discord.ButtonStyle.Success),
+
+
+                      
                         new Discord.ButtonBuilder()
                             .setCustomId('Bot_transcriptTicket')
                             .setEmoji('📝')
+.setLabel('Transcript')
                             .setStyle(Discord.ButtonStyle.Primary),
 
-                        new Discord.ButtonBuilder()
-                            .setCustomId('Bot_openTicket')
-                            .setEmoji('🔓')
-                            .setStyle(Discord.ButtonStyle.Primary),
+                        
 
                         new Discord.ButtonBuilder()
                             .setCustomId('Bot_deleteTicket')
                             .setEmoji('⛔')
+.setLabel('Delete')
                             .setStyle(Discord.ButtonStyle.Danger),
                     );
 

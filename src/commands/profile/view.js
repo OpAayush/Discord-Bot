@@ -170,7 +170,11 @@ module.exports = async (client, interaction, args) => {
             }, interaction);
         }
         else {
-            return client.errNormal({ error: "No profile found! Open a profile with /profile create", type:'editreply' }, interaction);
+          
+            return client.embed({
+              desc: "No profile found! Open a profile with /profile create", 
+              type:'editreply' 
+            }, interaction);
         }
     })
 }

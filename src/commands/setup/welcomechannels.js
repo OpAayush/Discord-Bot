@@ -11,8 +11,7 @@ module.exports = async (client, interaction, args) => {
         welcomechannel : welcomeChannel,
         leavechannel : leaveChannel
     };
-
-    client.createChannelSetup(choices[choice], channel, interaction);
+  client.createChannelSetup(choices[choice], channel, interaction);
 }
 
  

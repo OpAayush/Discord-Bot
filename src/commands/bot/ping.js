@@ -21,17 +21,17 @@ module.exports = async (client, interaction, args) => {
                     {
                         name: "🤖┆Bot latency",
                         value: `${ping}ms (${pingSeconds}s)`,
-                        inline: true,
+                       // inline: true,
                     },
                     {
                         name: "💻┆API Latency",
                         value: `${client.ws.ping}ms (${apiSeconds}s)`,
-                        inline: true,
+                       // inline: true,
                     },
                     {
                         name: "📂┆Database Latency",
                         value: `${result.ok}ms (${mongooseSeconds}s)`,
-                        inline: true,
+                      //  inline: true,
                     }
                 ],
                 type: 'editreply'

@@ -12,10 +12,6 @@ module.exports = async (client, guild, url) => {
                 name: `> URL`,
                 value: `- ${url}`
             },
-            {
-                name: `> Timestamp`,
-                value: `- <t:${Math.floor(Date.now() / 1000)}:R>`
-            }
         ]
     }, logsChannel).catch(() => { })
 };

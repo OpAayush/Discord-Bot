@@ -106,7 +106,17 @@ module.exports = {
                 .setDescription('Setup the ticket panel')
                 .addStringOption(option => option.setName('name').setDescription('The name of the ticket panel').setRequired(true))
                 .addStringOption(option => option.setName('description').setDescription('The description of the ticket panel').setRequired(true))
-        )
+          .addStringOption(option =>
+                    option.setName('color')
+                        .setDescription('Specify the color pf the button (defualt grey)')
+                        
+                       .addChoices(
+				{ name: 'Green', value: 'green' },
+				{ name: 'Grey', value: 'grey' },
+				{ name: 'Blue', value: 'blue' },
+        { name: 'Red', value: 'red' },
+			)))
+        
         .addSubcommand(subcommand =>
             subcommand
                 .setName('deletesetup')

@@ -52,11 +52,16 @@ module.exports = async (client, interaction, args) => {
     .slice(0, -1);
   const userFlags = member.user.flags ? member.user.flags.toArray() : [];
 
+
+      
+      const url = `https://cdn.discordapp.com/banners/${member.user.id}/${member.user.banner}.png?size=1024`;
+  
   return client.embed({
     title: `👤・User information`,
     desc: `Information about ${member.user.username}`,
+    
     thumbnail: member.user.displayAvatarURL({ dynamic: true, size: 1024 }),
-    image: member.user.bannerURL({ dynamic: true, size: 1024 }),
+    image: url,
     fields: [
       {
         name: "Username",
@@ -65,7 +70,7 @@ module.exports = async (client, interaction, args) => {
       },
       {
         name: "Discriminator",
-        value: `${member.user.discriminator}`,
+        value: `#${member.user.discriminator}`,
         inline: true,
       },
       {
@@ -105,7 +110,7 @@ module.exports = async (client, interaction, args) => {
       }
     ],
     type: 'editreply'
-  }, interaction)
+  }, interaction);
 }
 
    

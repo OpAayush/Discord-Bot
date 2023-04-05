@@ -19,18 +19,33 @@ module.exports = async (client, interaction, args) => {
                 fields: [{
                     name: "🟢┇Online",
                     value: `${json.online}`,
-                    inline: true,
+                    
                 },
                 {
                     name: "🏷️┇Version",
                     value: `${json.version}`,
-                    inline: true,
+                  
+                },
+                 {
+                    name: "📶┇Ping",
+                    value: `${json.debug.ping}`,
+                  
                 },
                 {
                     name: "👤┇Players online",
                     value: `${json.players.online}/${json.players.max}`,
-                    inline: true,
+                    
                 },
+              /*  {
+                    name: "🛠️┇Plugins ",
+                    value: `${json.plugins.names}`,
+                    
+                 },
+                 {
+                    name: "🔨┇Mods ",
+                    value: `${json.mods.names}`,
+                    
+                 },*/
                 ], type: 'editreply'
             }, interaction)
         }).catch({})

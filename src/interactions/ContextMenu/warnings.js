@@ -14,6 +14,7 @@ module.exports = {
      * @param {CommandInteraction} interaction
      * @param {String[]} args
      */
+
     run: async (client, interaction, args) => {
         const perms = await client.checkPerms({
             flags: [Discord.PermissionsBitField.Flags.ManageMessages],
@@ -33,7 +34,7 @@ module.exports = {
 
         Schema.findOne({ Guild: interaction.guild.id, User: member.id }, async (err, data) => {
             if (data) {
-                var fields = [];
+              var fields = [];
                 data.Warnings.forEach(element => {
                     fields.push({
                         name: "Warning **" + element.Case + "**",
@@ -49,7 +50,6 @@ module.exports = {
                             name: "Total",
                             value: `${data.Warnings.length}`,
                         },
-                        ...fields
                     ],
                     type: 'editreply'
                 }, interaction)

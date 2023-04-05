@@ -7,6 +7,7 @@ module.exports = async (client, interaction, args) => {
     let Animated = 0;
     let OverallEmojis = 0;
 
+   
     interaction.guild.emojis.cache.forEach((emoji) => {
         OverallEmojis++;
         if (emoji.animated) {
